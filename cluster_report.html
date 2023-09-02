@@ -1,0 +1,1212 @@
+
+    <html>
+        <head>
+            <title>Cluster Diagnosis Report</title>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        </head>
+        <body>
+            <h1>Cluster Diagnosis Report</h1>
+    <h2>componentstatuses</h2><canvas id='componentstatuses_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('componentstatuses_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Healthy'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [18],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>configmaps</h2><canvas id='configmaps_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('configmaps_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['1', '6', '0', '2', '28', '4'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [11, 2, 4, 2, 1, 1],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>endpoints</h2><canvas id='endpoints_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('endpoints_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['192.168.0.11:6443,192.168.0.13:6443,192.168.0.15:6443', '10.42.27.9:9093', '10.42.27.8:8080', '192.168.0.11:9100,192.168.0.13:9100,192.168.0.15:9100', '10.42.30.5:9091', '10.42.26.7:9090', '10.42.2.24:53,10.42.2.24:53,10.42.2.24:9153', '10.42.12.4:10250', '192.168.0.11:10250,192.168.0.13:10250,192.168.0.15:10250', '10.42.5.5:8000,10.42.5.5:8443', '10.42.33.6:3100', '10.42.29.5:3000', '10.42.33.6:7946'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>events</h2><canvas id='events_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('events_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['SEEN', 'Warning', 'Normal'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [2, 15, 1],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>namespaces</h2><canvas id='namespaces_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('namespaces_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Active'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [36],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>nodes</h2><canvas id='nodes_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('nodes_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Ready'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [270],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>persistentvolumeclaims</h2><canvas id='persistentvolumeclaims_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('persistentvolumeclaims_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Bound'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [2],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>persistentvolumes</h2><canvas id='persistentvolumes_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('persistentvolumes_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['2Gi', '8Gi'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [6, 6],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>pods</h2><canvas id='pods_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('pods_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['1/1', '0/1', '2/2'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [94, 4, 47],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>secrets</h2><canvas id='secrets_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('secrets_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Opaque', 'helm.sh/release.v1', 'kubernetes.io/tls'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [51, 4, 1],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>serviceaccounts</h2><canvas id='serviceaccounts_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('serviceaccounts_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['0'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [51],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>services</h2><canvas id='services_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('services_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['ClusterIP', 'LoadBalancer', 'NodePort'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [13, 1, 1],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>customresourcedefinitions.apiextensions.k8s.io</h2><canvas id='customresourcedefinitions.apiextensions.k8s.io_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('customresourcedefinitions.apiextensions.k8s.io_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['2023-08-29T10:00:08Z', '2023-08-29T14:06:59Z', '2023-08-29T10:00:46Z', '2023-08-29T14:07:00Z', '2023-08-29T14:07:01Z', '2023-08-29T14:07:02Z', '2023-08-29T14:07:03Z', '2023-08-29T14:07:04Z'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [18, 12, 54, 12, 12, 12, 6, 6],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>apiservices.apiregistration.k8s.io</h2><canvas id='apiservices.apiregistration.k8s.io_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('apiservices.apiregistration.k8s.io_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Local', 'kube-system/metrics-server'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [156, 6],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>controllerrevisions.apps</h2><canvas id='controllerrevisions.apps_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('controllerrevisions.apps_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['statefulset.apps/prometheus-alertmanager', 'daemonset.apps/prometheus-prometheus-node-exporter', 'daemonset.apps/svclb-traefik-b7145693', 'statefulset.apps/loki', 'daemonset.apps/loki-promtail'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [1, 1, 1, 1, 1],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>daemonsets.apps</h2><canvas id='daemonsets.apps_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('daemonsets.apps_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['45'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [3],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>deployments.apps</h2><canvas id='deployments.apps_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('deployments.apps_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['1/1'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [8],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>replicasets.apps</h2><canvas id='replicasets.apps_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('replicasets.apps_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['1'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [8],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>statefulsets.apps</h2><canvas id='statefulsets.apps_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('statefulsets.apps_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['1/1'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [2],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>endpointslices.discovery.k8s.io</h2><canvas id='endpointslices.discovery.k8s.io_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('endpointslices.discovery.k8s.io_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['IPv4'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [15],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>events.events.k8s.io</h2><canvas id='events.events.k8s.io_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('events.events.k8s.io_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['SEEN', 'Warning', 'Normal'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [2, 15, 1],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>flowschemas.flowcontrol.apiserver.k8s.io</h2><canvas id='flowschemas.flowcontrol.apiserver.k8s.io_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('flowschemas.flowcontrol.apiserver.k8s.io_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['exempt', 'leader-election', 'workload-high', 'node-high', 'system', 'workload-low', 'global-default', 'catch-all'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [12, 12, 24, 6, 6, 6, 6, 6],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>prioritylevelconfigurations.flowcontrol.apiserver.k8s.io</h2><canvas id='prioritylevelconfigurations.flowcontrol.apiserver.k8s.io_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('prioritylevelconfigurations.flowcontrol.apiserver.k8s.io_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Limited', 'Exempt'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [42, 6],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>nodes.metrics.k8s.io</h2><canvas id='nodes.metrics.k8s.io_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('nodes.metrics.k8s.io_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['127015827n', '159520838n', '206838033n', '166292359n', '122947956n', '31346710n', '29532076n', '37912800n', '24762855n', '29157721n', '26755852n', '25152210n', '48505414n', '28748253n', '30147242n', '21960471n', '31137724n', '31140832n', '23162939n', '33137039n', '27946900n', '32742700n', '27151127n', '28351801n', '20166724n', '29555666n', '53072625n', '35115722n', '52631578n', '24767801n', '21155573n', '25555278n', '27743126n', '25756214n', '40718562n', '39149106n', '35541356n', '34338191n', '45866985n', '47068209n', '40275147n', '95456814n', '185248028n', '203315358n', '141702424n', '134490671n', '23555245n', '33534607n', '27354864n', '22967845n', '27941323n', '33532934n', '32346628n', '37935509n', '17571007n', '22357520n', '32145352n', '26952832n', '36937206n', '26154230n', '29934144n', '21956087n', '23960465n', '23156003n', '31134617n', '27758362n', '77636962n', '33529587n', '40327410n', '26749176n', '24157723n', '31543222n', '23545844n', '25546352n', '26954177n', '30753869n', '22157899n', '43489102n', '37717022n', '35309959n', '1493407910n', '139776357n', '191198483n', '123414877n', '172839506n', '21962663n', '31744447n', '25142173n', '28555738n', '30345378n', '28551462n', '44701656n', '27558662n', '28340484n', '28950783n', '30148747n', '25154721n', '21763002n', '31533779n', '32335329n', '30947389n', '27547659n', '25758785n', '79832352n', '25344242n', '31734943n', '26958214n', '26156841n', '26349935n', '32348242n', '26746506n', '33130426n', '23964053n', '26352565n', '24558250n', '49276808n', '40684050n', '38699381n', '1480119880n', '138123752n', '194459695n', '137139435n', '129766420n', '25157232n', '33539628n', '35119225n', '29144625n', '27353499n', '29946097n', '48305803n', '30351437n', '22759033n', '28343313n', '32338556n', '33932135n', '30348407n', '31939315n', '34543004n', '30945844n', '36327345n', '62244389n', '54258926n', '52668329n', '37920367n', '25953284n', '26556182n', '31139278n', '28752558n', '36730212n', '36334597n', '34148776n', '37931722n', '45069299n', '45472676n', '40279162n', '1495454091n', '164503892n', '199221479n', '131337325n', '133745882n', '29537970n', '27348038n', '24761619n', '24759147n', '22353058n', '35532488n', '26356511n', '36737546n', '20963314n', '29546815n', '24757911n', '24557025n', '41924535n', '29150444n', '20566065n', '17964071n', '23562300n', '25945514n', '28745383n', '67248690n', '32130918n', '35336394n', '27945506n', '25155977n', '31936127n', '22749950n', '20363345n', '23559948n', '25564210n', '20769883n', '40299251n', '39115900n', '34709754n', '1484721390n', '157156407n', '209927094n', '151127969n', '135336094n', '20767809n', '31143940n', '19169329n', '29943108n', '26553531n', '33151929n', '40722627n', '29543866n', '31944097n', '33935522n', '28758300n', '32750873n', '37528695n', '32745969n', '21559037n', '28350386n', '25560381n', '35931729n', '66221202n', '30327214n', '33938909n', '26751846n', '33556376n', '36340038n', '36528768n', '31945692n', '38125654n', '25149700n', '25356893n', '46711248n', '39485491n', '36287508n', '47462359n'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>pods.metrics.k8s.io</h2><canvas id='pods.metrics.k8s.io_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('pods.metrics.k8s.io_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['1513225n', '2917863n', '98747n', '199254n', '86891n', '172979n', '73223n', '87767n', '2331525n', '126416n', '65613n', '146825n', '199054n', '2627953n', '144698n', '2137719n', '141828n', '67961n', '303760n', '2619571n', '2240389n', '1593213n', '152630n', '1119734n', '149387n', '179165n', '110852n', '150870n', '183853n', '166601n', '102187n', '202844n', '2612284n', '101411n', '146351n', '138917n', '140571n', '1810199n', '3072750n', '71452n', '2527157n', '2363870n', '3219188n', '301337n', '35097837n', '2212562n', '727095n', '13245138n', '0', '586865n', '3866996n', '2359244n', '6393446n', '6331414n', '6109087n', '6268288n', '6660294n', '7091400n', '5655504n', '6965695n', '6153825n', '6493458n', '7313734n', '6198166n', '12116812n', '6284234n', '6354367n', '5887705n', '6396079n', '6528597n', '6629570n', '3765709n', '12082651n', '6832596n', '6273176n', '6345645n', '5812310n', '13026059n', '5534983n', '6542998n', '6413971n', '6296484n', '6421564n', '7466847n', '6421972n', '6212650n', '6157720n', '6524479n', '5761258n', '7302230n', '6564791n', '6284353n', '6450528n'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 41, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>ingressclasses.networking.k8s.io</h2><canvas id='ingressclasses.networking.k8s.io_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('ingressclasses.networking.k8s.io_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['traefik.io/ingress-controller'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [6],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>ingresses.networking.k8s.io</h2><canvas id='ingresses.networking.k8s.io_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('ingresses.networking.k8s.io_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['traefik'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [1],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>clusterrolebindings.rbac.authorization.k8s.io</h2><canvas id='clusterrolebindings.rbac.authorization.k8s.io_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('clusterrolebindings.rbac.authorization.k8s.io_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['ClusterRole/cluster-admin', 'ClusterRole/clustercidrs-node', 'ClusterRole/k3s-cloud-controller-manager', 'ClusterRole/system:auth-delegator', 'ClusterRole/system:kubelet-api-admin', 'ClusterRole/local-path-provisioner-role', 'ClusterRole/loki-grafana-clusterrole', 'ClusterRole/loki-promtail', 'ClusterRole/prometheus-kube-state-metrics', 'ClusterRole/prometheus-server', 'ClusterRole/system:basic-user', 'ClusterRole/system:controller:attachdetach-controller', 'ClusterRole/system:controller:certificate-controller', 'ClusterRole/system:controller:clusterrole-aggregation-controller', 'ClusterRole/system:controller:cronjob-controller', 'ClusterRole/system:controller:daemon-set-controller', 'ClusterRole/system:controller:deployment-controller', 'ClusterRole/system:controller:disruption-controller', 'ClusterRole/system:controller:endpoint-controller', 'ClusterRole/system:controller:endpointslice-controller', 'ClusterRole/system:controller:endpointslicemirroring-controller', 'ClusterRole/system:controller:ephemeral-volume-controller', 'ClusterRole/system:controller:expand-controller', 'ClusterRole/system:controller:generic-garbage-collector', 'ClusterRole/system:controller:horizontal-pod-autoscaler', 'ClusterRole/system:controller:job-controller', 'ClusterRole/system:controller:namespace-controller', 'ClusterRole/system:controller:node-controller', 'ClusterRole/system:controller:persistent-volume-binder', 'ClusterRole/system:controller:pod-garbage-collector', 'ClusterRole/system:controller:pv-protection-controller', 'ClusterRole/system:controller:pvc-protection-controller', 'ClusterRole/system:controller:replicaset-controller', 'ClusterRole/system:controller:replication-controller', 'ClusterRole/system:controller:resourcequota-controller', 'ClusterRole/system:controller:root-ca-cert-publisher', 'ClusterRole/system:controller:route-controller', 'ClusterRole/system:controller:service-account-controller', 'ClusterRole/system:controller:service-controller', 'ClusterRole/system:controller:statefulset-controller', 'ClusterRole/system:controller:ttl-after-finished-controller', 'ClusterRole/system:controller:ttl-controller', 'ClusterRole/system:coredns', 'ClusterRole/system:discovery', 'ClusterRole/system:k3s-controller', 'ClusterRole/system:kube-controller-manager', 'ClusterRole/system:kube-dns', 'ClusterRole/system:kube-scheduler', 'ClusterRole/system:metrics-server', 'ClusterRole/system:monitoring', 'ClusterRole/system:node', 'ClusterRole/system:node-proxier', 'ClusterRole/system:public-info-viewer', 'ClusterRole/system:service-account-issuer-discovery', 'ClusterRole/system:volume-scheduler', 'ClusterRole/traefik-kube-system'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [18, 6, 6, 12, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>clusterroles.rbac.authorization.k8s.io</h2><canvas id='clusterroles.rbac.authorization.k8s.io_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('clusterroles.rbac.authorization.k8s.io_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['2023-08-29T10:00:07Z', '2023-08-29T10:00:13Z', '2023-08-29T10:00:11Z', '2023-09-01T18:39:41Z', '2023-08-29T14:42:58Z', '2023-08-29T10:00:08Z', '2023-08-29T10:00:12Z', '2023-08-29T10:00:48Z'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [150, 12, 24, 12, 12, 222, 6, 6],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>priorityclasses.scheduling.k8s.io</h2><canvas id='priorityclasses.scheduling.k8s.io_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('priorityclasses.scheduling.k8s.io_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['2000000000', '2000001000'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [6, 6],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>csinodes.storage.k8s.io</h2><canvas id='csinodes.storage.k8s.io_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('csinodes.storage.k8s.io_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['0'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [270],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>storageclasses.storage.k8s.io</h2><canvas id='storageclasses.storage.k8s.io_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('storageclasses.storage.k8s.io_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['(default)'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [6],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>traefikservices.traefik.containo.us</h2><canvas id='traefikservices.traefik.containo.us_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('traefikservices.traefik.containo.us_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Namespace:'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [5],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>leases.coordination.k8s.io</h2><canvas id='leases.coordination.k8s.io_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('leases.coordination.k8s.io_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['ezzy000', 'ezzy004', 'ezzy006', 'ezzy007', 'ezzy008', 'ezzy009', 'ezzy010', 'ezzy011', 'ezzy012', 'ezzy013', 'ezzy014', 'ezzy015', 'ezzy016', 'ezzy017', 'ezzy018', 'ezzy019', 'ezzy020', 'ezzy022', 'ezzy023', 'ezzy024', 'ezzy025', 'ezzy026', 'ezzy027', 'ezzy028', 'ezzy029', 'ezzy030', 'ezzy031', 'ezzy032', 'ezzy033', 'ezzy034', 'ezzy035', 'ezzy036', 'ezzy037', 'ezzy038', 'ezzy039', 'ezzy040', 'ezzy041', 'ezzy042', 'ezzy043', 'ezzy044', 'ezzy045', 'ezzy046', 'ezzy047', 'ezzy048', 'ezzy049', 'apiserver-gwfhzkq3ufqnau44pfdhoauhiy_13472c4a-b026-42a2-a538-38eefb700f0d', 'apiserver-hhohfvo2o2nwox2hijm32lsecy_8a3c5c73-7559-4939-a899-f77f1e2b8c34', 'apiserver-jiklhknvawxthqyfzz4zhxeaoi_7b11b60c-997b-4914-bea6-6d10b8e999f6', 'apiserver-sup4o7ckk73ybhvtipwe6y6gra_fb2b514c-c058-4e49-ba15-ace89de213cc', 'apiserver-xxitqt6wp5a4gf7v46q5syn7re_29150c42-ad3f-4220-bc63-47b7aeeaa6e8', 'ezzy006_724e474d-2a79-411b-ac3e-000efaca9fd8', 'ezzy006_68443af3-f6c8-4b38-aa21-fa3b6774e5e9', 'ezzy007_b9f8df19-c7dc-4be3-a739-3f6326b529ca'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>rolebindings.rbac.authorization.k8s.io</h2><canvas id='rolebindings.rbac.authorization.k8s.io_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('rolebindings.rbac.authorization.k8s.io_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Role/system:controller:bootstrap-signer', 'Role/extension-apiserver-authentication-reader', 'Role/system::leader-locking-kube-controller-manager', 'Role/system::leader-locking-kube-scheduler', 'Role/system:controller:cloud-provider', 'Role/system:controller:token-cleaner', 'Role/loki', 'Role/loki-grafana'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [2, 3, 1, 1, 1, 1, 1, 1],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>roles.rbac.authorization.k8s.io</h2><canvas id='roles.rbac.authorization.k8s.io_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('roles.rbac.authorization.k8s.io_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['2023-08-29T10:00:08Z', '2023-09-01T18:39:41Z'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [7, 2],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>jobs.batch</h2><canvas id='jobs.batch_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('jobs.batch_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['1/1'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [2],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>helmcharts.helm.cattle.io</h2><canvas id='helmcharts.helm.cattle.io_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('helmcharts.helm.cattle.io_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['helm-install-traefik', 'helm-install-traefik-crd'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [1, 1],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>addons.k3s.cattle.io</h2><canvas id='addons.k3s.cattle.io_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('addons.k3s.cattle.io_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['/var/lib/rancher/k3s/server/manifests/metrics-server/aggregated-metrics-reader.yaml', '/var/lib/rancher/k3s/server/manifests/metrics-server/auth-delegator.yaml', '/var/lib/rancher/k3s/server/manifests/metrics-server/auth-reader.yaml', '/var/lib/rancher/k3s/server/manifests/ccm.yaml', '/var/lib/rancher/k3s/server/manifests/coredns.yaml', '/var/lib/rancher/k3s/server/manifests/local-storage.yaml', '/var/lib/rancher/k3s/server/manifests/metrics-server/metrics-apiservice.yaml', '/var/lib/rancher/k3s/server/manifests/metrics-server/metrics-server-deployment.yaml', '/var/lib/rancher/k3s/server/manifests/metrics-server/metrics-server-service.yaml', '/var/lib/rancher/k3s/server/manifests/metrics-server/resource-reader.yaml', '/var/lib/rancher/k3s/server/manifests/rolebindings.yaml', '/var/lib/rancher/k3s/server/manifests/traefik.yaml'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        <h2>ingressroutes.traefik.containo.us</h2><canvas id='ingressroutes.traefik.containo.us_chart'></canvas>
+            <script>
+                var ctx = document.getElementById('ingressroutes.traefik.containo.us_chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['4d11h'],
+                        datasets: [{
+                            label: 'Status Count',
+                            data: [1],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',  // You can add more colors here
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        
+        </body>
+    </html>
+    
