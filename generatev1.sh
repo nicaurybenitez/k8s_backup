@@ -9,16 +9,21 @@ PROJECT_NAME="my_project"
 # Función para recopilar recursos
 gather_resources() {
     NAMESPACE=$1
-    echo "### Namespace: $NAMESPACE" >> $OUTPUT_FILE
-    for RESOURCE in $(rancher kubectl api-resources --verbs=list -o name)
-    do
-        # Verificar si el recurso existe en el namespace
-        if rancher kubectl get $RESOURCE -n $NAMESPACE &>/dev/null; then
-            echo "Resource: $RESOURCE" >> $OUTPUT_FILE
-            rancher kubectl get $RESOURCE -n $NAMESPACE -o wide >> $OUTPUT_FILE
-            echo "---------------------------" >> $OUTPUT_FILE
-        fi
-    done
+    # Verificar si el namespace existe y tiene recursos
+    if rancher kubectl get ns $NAMESPACE &>/dev/null; then
+        echo "### Namespace: $NAMESPACE" >> $OUTPUT_FILE
+        for RESOURCE in $(rancher kubectl api-resources --verbs=list -o name)
+        do
+            # Verificar si el recurso existe en el namespace
+            if rancher kubectl get $RESOURCE -n $NAMESPACE &>/dev/null; then
+                echo "Resource: $RESOURCE" >> $OUTPUT_FILE
+                rancher kubectl get $RESOURCE -n $NAMESPACE -o wide >> $OUTPUT_FILE
+                echo "---------------------------" >> $OUTPUT_FILE
+            fi
+        done
+    else
+        echo "### Namespace: $NAMESPACE not found or has no resources" >> $OUTPUT_FILE
+    fi
 }
 
 # Empezar con el informe
