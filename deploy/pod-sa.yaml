@@ -1,0 +1,31 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: Kaas-dump
+  name: Kaas-dump
+  namespace: Kaas-dump
+spec:
+  serviceAccountName: Kaas-dump
+  containers:
+    - name: Kaas-dump
+      image: woozymasta/Kaas-dump:latest
+      imagePullPolicy: IfNotPresent
+      command: ["/bin/bash", "-c", "--"]
+      args: ["while true; do sleep 60; done;"]
+      volumeMounts:
+        - name: data
+          mountPath: /data
+      resources:
+        limits:
+          cpu: 500m
+          memory: 200Mi
+        requests:
+          cpu: 200m
+          memory: 100Mi
+  restartPolicy: OnFailure
+  volumes:
+    - name: data
+      persistentVolumeClaim:
+        claimName: Kaas-dump

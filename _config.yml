@@ -1,0 +1,5 @@
+theme: jekyll-theme-cayman
+show_downloads: true
+logo: /extras/logo.png
+title: Kaas-dump
+description: Backup a Kubernetes cluster as a yaml manifest.

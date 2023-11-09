@@ -1,0 +1,69 @@
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  labels:
+    app: Kaas-dump
+  name: Kaas-dump
+  namespace: Kaas-dump
+spec:
+  schedule: "0 1 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: Kaas-dump
+          containers:
+            - name: Kaas-dump
+              image: woozymasta/Kaas-dump:latest
+              imagePullPolicy: IfNotPresent
+              env:
+                - name: MODE
+                  value: "dump"
+                - name: DESTINATION_DIR
+                  value: "/data/dump"
+                - name: GIT_PUSH
+                  value: "true"
+                - name: GIT_BRANCH
+                  value: "master"
+                - name: GIT_COMMIT_USER
+                  value: "Kube Dump"
+                - name: GIT_COMMIT_EMAIL
+                  value: "kube@dump.local"
+                - name: GIT_REMOTE_URL
+                  value: "git@corp-gitlab.com:devops/cluster-bkp.git"
+              volumeMounts:
+                - name: data
+                  mountPath: /data
+                - name: key
+                  mountPath: /root/.ssh/id_ed25519
+                  subPath: id_ed25519
+                - name: key-pub
+                  mountPath: /root/.ssh/id_ed25519.pub
+                  subPath: id_ed25519.pub
+              resources:
+                limits:
+                  cpu: 500m
+                  memory: 200Mi
+                requests:
+                  cpu: 200m
+                  memory: 100Mi
+          restartPolicy: OnFailure
+          volumes:
+            - name: data
+              persistentVolumeClaim:
+                claimName: Kaas-dump
+            - name: key
+              secret:
+                secretName: Kaas-dump-key
+                items:
+                  - key: Kaas-dump
+                    path: id_ed25519
+                    mode: 0600
+            - name: key-pub
+              secret:
+                secretName: Kaas-dump-key
+                items:
+                  - key: Kaas-dump.pub
+                    path: id_ed25519.pub
+                    mode: 0600

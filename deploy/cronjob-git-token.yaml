@@ -1,0 +1,39 @@
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  labels:
+    app: Kaas-dump
+  name: Kaas-dump
+  namespace: Kaas-dump
+spec:
+  schedule: "0 1 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: Kaas-dump
+          containers:
+            - name: Kaas-dump
+              image: woozymasta/Kaas-dump:latest
+              imagePullPolicy: IfNotPresent
+              envFrom:
+                - secretRef:
+                    name: Kaas-dump
+              env:
+                - name: MODE
+                  value: "ns"
+                - name: NAMESPACES
+                  value: "dev,prod"
+                - name: GIT_PUSH
+                  value: "true"
+                - name: GIT_BRANCH
+                  value: "my-cluster"
+              resources:
+                limits:
+                  cpu: 500m
+                  memory: 200Mi
+                requests:
+                  cpu: 200m
+                  memory: 100Mi
+          restartPolicy: OnFailure

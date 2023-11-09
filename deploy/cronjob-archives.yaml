@@ -1,0 +1,45 @@
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  labels:
+    app: Kaas-dump
+  name: Kaas-dump
+  namespace: Kaas-dump
+spec:
+  schedule: "0 1 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: Kaas-dump
+          containers:
+            - name: Kaas-dump
+              image: woozymasta/Kaas-dump:latest
+              imagePullPolicy: IfNotPresent
+              env:
+                - name: MODE
+                  value: "dump"
+                - name: FORCE_REMOVE
+                  value: "true"
+                - name: ARCHIVATE
+                  value: "true"
+                - name: ARCHIVE_ROTATE
+                  value: "60"
+                - name: ARCHIVE_TYPE
+                  value: "xz"
+              volumeMounts:
+                - name: data
+                  mountPath: /data
+              resources:
+                limits:
+                  cpu: 500m
+                  memory: 200Mi
+                requests:
+                  cpu: 200m
+                  memory: 100Mi
+          restartPolicy: OnFailure
+          volumes:
+            - name: data
+              persistentVolumeClaim:
+                claimName: Kaas-dump
